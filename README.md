@@ -11,8 +11,8 @@ A simple directory creation script that will create a project folder and subdire
 2. move directoryCreation.py to your root folder and give it read/write/execute permission by entering the following command:
   `mv directoryCreation.py ~ && chmod 700 directoryCreation.py`
 
-4. Open directoryCreation.command and replace '{ ENTER THE ABSOLUTE PATH TO YOUR DESIRED DIRECTORY HERE }' with your desired directory path, removing the braces and leaving the quotes. Save and close the file.
+4. Open directoryCreation.py in your preferred text editor and replace '<ENTER THE ABSOLUTE PATH TO YOUR DESIRED DIRECTORY HERE>' with your desired directory path, removing the "<>" and leaving the quotes. Save and close the file.
 
 You're all set! In the terminal, you should now be able to execute the script with the following command:
 
-	`./directoryCreation.command`
+	`~/directoryCreation.py`
