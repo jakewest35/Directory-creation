@@ -1,29 +1,37 @@
 #!/usr/bin/python3
 
 from os import chdir, mkdir
-from subprocess import call
+from subprocess import Popen
 
-current_directory = '{ ENTER THE ABSOLUTE PATH TO YOUR DESIRED DIRECTORY HERE }'
+current_directory = '/Users/jakewest/Documents/MyProjects'
 
 chdir(current_directory)
 
 project_name = str(input("Enter the project name: "))
-mkdir(current_directory + '/'+ '{}'.format(project_name))
+try:
+    mkdir(current_directory + '/' + '{}'.format(project_name))
+except FileExistsError:
+    dir = current_directory + '/' + project_name
+    print("PROJECT DIRECTORY ALREADY EXISTS")
+    Popen(["open", dir])
+    exit(1)
 
-new_directory = current_directory + '/'+ '{}'.format(project_name)
+new_directory = current_directory + '/' + '{}'.format(project_name)
 chdir(new_directory)
 
-done = False
-while done != True:
-    subDir = str(input("Do you want to create any subdirectories? <y/n>\n")).lower()
+while True:
+    subDir = str(
+        input("Do you want to create any subdirectories? <y/n>\n")).lower()
     if subDir == "y":
         newDir = str(input("What is the name of the subdirectory? "))
-        mkdir(newDir)
+        try:
+            mkdir(newDir)
+        except FileExistsError:
+            print("###############That directory already exists###############")
     elif subDir == "n":
-        done = True
         break
     else:
         print("Invalid answer Please enter either <y/n>.\n")
 
 print("Directory created :)")
-call(["open", "-R", new_directory])
+proc = Popen(["open", new_directory])
