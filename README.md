@@ -8,8 +8,7 @@ A simple directory creation script that will create a project folder and subdire
 
 1. Clone this repo.
 
-2. move directoryCreation.py to your root folder and give it read/write/execute permission by entering the following command:
-  `mv directoryCreation.py ~ && chmod 700 directoryCreation.py`
+2. Run `install.sh`. This will move the script to the system's root folder (~) and give it read/write/execute permissions for the current user only.
 
 4. Open directoryCreation.py in your preferred text editor and replace '<ENTER THE ABSOLUTE PATH TO YOUR DESIRED DIRECTORY HERE>' with your desired directory path, removing the "<>" and leaving the quotes. Save and close the file.
 
