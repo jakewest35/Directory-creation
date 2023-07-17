@@ -5,7 +5,7 @@ Creates a project directory with n-number of subdirectories
 
 import sys
 from os import chdir, makedirs, mkdir
-from subprocess import Popen
+from subprocess import Popen, run
 
 CURRENT_DIRECTORY = '<ENTER THE ABSOLUTE PATH TO YOUR DESIRED DIRECTORY HERE>'
 
@@ -37,5 +37,10 @@ while True:
     else:
         print("Invalid answer Please enter either <y/n>.\n")
 
+try:
+    run(["code", NEW_DIRECTORY], check=False)
+except FileNotFoundError:
+    print("VS Code is not installed or not in the system's PATH. Opening the project in file explorer instead.")
+    proc = Popen(["open", NEW_DIRECTORY])
+
 print("Directory created :)")
-proc = Popen(["open", NEW_DIRECTORY])
