@@ -7,8 +7,7 @@ import sys
 from os import chdir, makedirs, mkdir
 from subprocess import Popen
 
-# CURRENT_DIRECTORY = '{{ ENTER YOUR PROJECT DIRECTORY HERE }}'
-CURRENT_DIRECTORY = '/Users/jakewest/Development/MyProjects'
+CURRENT_DIRECTORY = '<ENTER THE ABSOLUTE PATH TO YOUR DESIRED DIRECTORY HERE>'
 
 chdir(CURRENT_DIRECTORY)
 
